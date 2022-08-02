@@ -36,7 +36,10 @@ When you have completed this challenge, submit by DMing the instructors with a l
 
 ### Challenge Description
 
-Supermarket Sweep is an app that tracks Supermarkets, the customers that they serve and the items that those customers purchase. Supermarkets have many customers. Customers belong to a Supermarket. Customers have many Items and Items have many Customers.
+Supermarket Sweep is an app that tracks Supermarkets, the customers that they serve and the items that those customers purchase. 
+* Supermarkets have many customers. 
+* Customers belong to a Supermarket. 
+* Customers have many Items and Items have many Customers.
 
 Supermarkets have a name and a location.
 
