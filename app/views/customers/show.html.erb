@@ -1,0 +1,8 @@
+
+  <% @items.each do |item| %>
+    <div class="item-<%= item.id %>">
+      <%= item.name %> - <%= @supermarket.name %>
+    </div>
+  <% end %>
+
+  Total Cost: <%= number_to_currency(@total_price) %>

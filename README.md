@@ -48,7 +48,11 @@ Customers have a name.
 Items have a name and a price (this can be stored as an integer)
 
 
-Two migrations have been made for you. The one to many relationship has been set up. You will need to create migrations for the many to many relationship between items and customers. You do not need to do model testing for validations, just make sure you test any relationships and model methods that you create.
+* Two migrations have been made for you. The one to many relationship has been set up. 
+
+* You will need to create migrations for the many to many relationship between items and customers. 
+
+* You do not need to do model testing for validations, just make sure you test any relationships and model methods that you create.
 
 ## User Stories
 

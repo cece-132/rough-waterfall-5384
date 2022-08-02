@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_25_155143) do
+ActiveRecord::Schema.define(version: 2022_08_02_174815) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 2022_07_25_155143) do
     t.bigint "supermarket_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "item_id"
+    t.index ["item_id"], name: "index_customers_on_item_id"
     t.index ["supermarket_id"], name: "index_customers_on_supermarket_id"
   end
 
@@ -48,6 +50,13 @@ ActiveRecord::Schema.define(version: 2022_07_25_155143) do
     t.index ["department_id"], name: "index_employees_on_department_id"
   end
 
+  create_table "items", force: :cascade do |t|
+    t.string "name"
+    t.integer "price"
+    t.bigint "customer_id"
+    t.index ["customer_id"], name: "index_items_on_customer_id"
+  end
+
   create_table "supermarkets", force: :cascade do |t|
     t.string "name"
     t.string "location"
@@ -62,8 +71,10 @@ ActiveRecord::Schema.define(version: 2022_07_25_155143) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "customers", "items"
   add_foreign_key "customers", "supermarkets"
   add_foreign_key "employee_tickets", "employees"
   add_foreign_key "employee_tickets", "tickets"
   add_foreign_key "employees", "departments"
+  add_foreign_key "items", "customers"
 end
